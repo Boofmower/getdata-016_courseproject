@@ -1,11 +1,11 @@
 ##Getting And Cleaning Data - Course Project
 =========================
-This is repository is for a course project for "Getting and Cleaning Data," a class offered through <a href="https://www.coursera.org/#jhu">Coursera and Johns Hopkins University</a>. 
-There are several files in the repository. Each file is part of an analysis that used a dataset created from <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">  Smartphones to assess human activity</a>. 
+<p>This is repository is for a course project for "Getting and Cleaning Data," a class offered through <a href="https://www.coursera.org/#jhu">Coursera and Johns Hopkins University</a>. </p>
+<p>There are several files in the repository. Each file is part of an analysis that used a dataset created from <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">  Smartphones to assess human activity</a>. </p>
 
 ##Course Project Instructions
 =========================
-You should create one R script called run_analysis.R that does the following. 
+<p>You should create one R script called run_analysis.R that does the following.</p>
 <ol>
 <li>Merges the training and the test sets to create one data set.</li>
 <li>Extracts only the measurements on the mean and standard deviation for each measurement. </li>
@@ -17,7 +17,7 @@ You should create one R script called run_analysis.R that does the following.
 ##Files in this Repository
 =========================
 
-The following outlines each file in the repository: 
+<p>The following outlines each file in the repository: </p>
 
 <ul>
 <li> CodeBook.md - a Code Book for the dataset mentioned above. This was created to define the variables and alterations to the data that took place. </li>
@@ -26,6 +26,6 @@ The following outlines each file in the repository:
 </ul>
 
 
-Author: Brandon Chiazza
-Date Created: December 8, 2014
+<p>Author: Brandon Chiazza</p>
+<p>Date Created: December 8, 2014</p>
 
