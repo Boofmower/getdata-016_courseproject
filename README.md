@@ -1,10 +1,8 @@
 #Getting And Cleaning Data - Course Project
-=========================
 <p>This is repository is for a course project for "Getting and Cleaning Data," a class offered through <a href="https://www.coursera.org/#jhu">Coursera and Johns Hopkins University</a>. </p>
 <p>There are several files in the repository. Each file is part of an analysis that used a dataset created from <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">  Smartphones to assess human activity</a>. </p>
 =========================
 ##Course Project Instructions
-=========================
 <p>You should create one R script called run_analysis.R that does the following.</p>
 <ol>
 <li>Merges the training and the test sets to create one data set.</li>
@@ -13,9 +11,9 @@
 <li>Appropriately labels the data set with descriptive variable names. </li>
 <li>From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.</li>
 </ol>
-=========================
+
 ##Files in this Repository
-=========================
+
 <p>The following outlines each file in the repository: </p>
 
 <ul>
