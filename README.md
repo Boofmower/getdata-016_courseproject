@@ -18,10 +18,10 @@
 
 <ul>
 <li> CodeBook.md - a Code Book for the dataset mentioned above. This was created to define the variables and alterations to the data that took place. </li>
-<li> run_analysis.R - the R code to run the analysis that fits the criteria outlined in the instructions above. This analysis assumes that the user has downloaded the dataset into its R working directory. </li>
+<li> <a href="https://github.com/Boofmower/getdata-016_courseproject/blob/master/run_analysis.R"> run_analysis.R </a> - the R code to run the analysis that fits the criteria outlined in the instructions above. This analysis assumes that the user has downloaded the dataset into its R working directory. </li>
 <li> avg.sub.tidy.txt - the output file from the analysis above. This is the tidy dataset created by first grouping by subjects, then by each of the six activities relevated to the data, and then by the mean of each of the parsed variables. </li>
 </ul>
 =========================
-<p>Author: Brandon Chiazza</p>
-<p>Date Created: December 8, 2014</p>
+<p><b>Author:</b> Brandon Chiazza</p>
+<p><b>Date Created:</b> December 8, 2014</p>
 
