@@ -6,7 +6,7 @@
 
 #==============================================NOTE=====================================================
 
-#		***************Data was created from the following source:****************
+#  	***************Data was created from the following source:****************
 #               Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. 
 #		Reyes-Ortiz. Human Activity Recognition on #Smartphones using #a Multiclass 
 #		Hardware-Friendly Support Vector Machine. International Workshop of Ambient 	
@@ -103,7 +103,7 @@ names(test.lbl) <- "activity"
 combine.test <- cbind(test.sub,test.lbl, test.set) #add subjects and labels to test set
 combine.training <- cbind(training.sub, training.lbl, training.set) #add subjects and labels
 
-data <- tbl_df(rbind(combine.test,combine.training)) #combines test and training datasets
+data <- rbind(combine.test,combine.training) #combines test and training datasets
 
 
 ##print(data)
@@ -133,11 +133,6 @@ data <- tbl_df(rbind(combine.test,combine.training)) #combines test and training
 #=======================================================================================================
 
 #=============================STEP 1. select only those headers with "mean" and "std"===================
-
-#regex for parsing names for st.deviation and mean. **could have attempted this, but chose the select()*
-#parse.mean.std <- grep("[Mm]ean+|[Ss][Tt][Dd]+",features.final,perl=TRUE, value=TRUE) 
-#name <- dput(as.character(parse.mean.std)) #creates character vector of column names
-#meanstd <- select(data, one_of(name)) #select column names from data
 
 #select columns that contain mean and st. deviation. Note: I included all columns that had either "mean"
 # or "std". It was not clear from the directions whether we use strictly "std()" or "mean()" so I conserv
@@ -176,16 +171,16 @@ data1 <- select(data, subject, activity, contains("mean"), contains("std"))
 #replace() functions. Looks at value in each column and replaces it with the activity label.
 
 activity.column <- ifelse(data1$activity==1,replace(data1$activity,data1$activity==1,'WALKING'),
-
-ifelse(data1$activity==2,replace(data1$activity,data1$activity==2,'WALKING_UPSTAIRS'),
-
-ifelse(data1$activity==3,replace(data1$activity,data1$activity==3,'WALKING_DOWNSTAIRS'),
-
-ifelse(data1$activity==4,replace(data1$activity,data1$activity==4,'SITTING'),
-
-ifelse(data1$activity==5,replace(data1$activity,data1$activity==5,'STANDING'),
-
-ifelse(data1$activity==6,replace(data1$activity,data1$activity==6,'LAYING'),"NA"))))))
+                          
+                          ifelse(data1$activity==2,replace(data1$activity,data1$activity==2,'WALKING_UPSTAIRS'),
+                                 
+                                 ifelse(data1$activity==3,replace(data1$activity,data1$activity==3,'WALKING_DOWNSTAIRS'),
+                                        
+                                        ifelse(data1$activity==4,replace(data1$activity,data1$activity==4,'SITTING'),
+                                               
+                                               ifelse(data1$activity==5,replace(data1$activity,data1$activity==5,'STANDING'),
+                                                      
+                                                      ifelse(data1$activity==6,replace(data1$activity,data1$activity==6,'LAYING'),"NA"))))))
 
 #replaces the activity column with descriptive activity names
 
@@ -208,39 +203,19 @@ data1$activity <- activity.column
 #=======================================================================================================
 #-----------------------------------------END PART. 3---------------------------------------------------
 #=======================================================================================================
-
 #=======================================================================================================
-#-------------------------------------PART 4. DESCRIPTIVE LABELS----------------------------------------
+#-------------------------------------PART 4. Descriptive Labels----------------------------------------
 #=======================================================================================================
+#added descriptive label names and applied this to the current data table
 
-#*******************************************************************************************************
-#*************~~~SEE PART 1 WHERE I HAVE ADDED THE FEATURES.CHAR TO THE DATASET RECALL:~~***************
-#*******************************************************************************************************
+names.1 <- gsub("tBody", "TimeBody", names(data1)) #changes tBody to TimeBody
+names.2 <- gsub("fBody", "FreqBody", names.1) #changes fBody to FreqBody
+names.3 <- gsub("tGravity", "TimeGravity", names.2) #changes tGravity to TimeGravity
+names.4 <- gsub("fGravity", "FreqGravity", names.3) #changes fGravity to FreqGravity
+names.5 <- gsub("BodyBody", "Body", names.4) #changes double "Body" to only one Body
+names.6 <- gsub("-()", "", names.5) #removes extraneous "-()" from names
 
-#features.select <- select(features, V2) # select column 2 from data table
-#features.final <- t(features.select) # transpose column headers to a row
-#features.char <- make.names(features.final, unique=TRUE) # assign as character vector
-#names(test.set) <- features.char # assign data set with column names
-#names(training.set) <- features.char # assign data set with column names
-#names(training.sub) <- "subject"
-#names(test.sub) <- "subject"
-#names(training.lbl) <- "activity"
-#names(test.lbl) <- "activity"
-
-#combine.test <- cbind(test.sub,test.lbl, test.set) #add subjects and labels to test set
-#combine.training <- cbind(training.sub, training.lbl, training.set) #add subjects and labels
-
-#data <- tbl_df(rbind(combine.test,combine.training)) #combines test and training datasets
-
-
-#> head(data1)
-#  subject activity tBodyAcc.mean...X tBodyAcc.mean...Y tBodyAcc.mean...Z tGravityAcc.mean...X
-#1       2 STANDING         0.2571778       -0.02328523       -0.01465376            0.9364893
-#2       2 STANDING         0.2860267       -0.01316336       -0.11908252            0.9274036
-#3       2 STANDING         0.2754848       -0.02605042       -0.11815167            0.9299150
-#4       2 STANDING         0.2702982       -0.03261387       -0.11752018            0.9288814
-#5       2 STANDING         0.2748330       -0.02784779       -0.12952716            0.9265997
-#6       2 STANDING         0.2792199       -0.01862040       -0.11390197            0.9256632
+names(data1) <- names.6
 
 #=======================================================================================================
 #-------------------------------------END PART 4.-------------------------------------------------------
@@ -264,6 +239,7 @@ print(avg.sub)
 #=======================================================================================================
 
 #****Use the following code to check the tidy data set in R******
-#write.table(avg.sub, row.name=FALSE, ".\\avg.sub.tidy.txt")
-#g <-read.table("./avg.sub.tidy.txt", header=TRUE)
-#head(g)
+write.table(avg.sub, row.name=FALSE, ".\\avg.sub.tidy.txt")
+g <-read.table("./avg.sub.tidy.txt", header=TRUE)
+head(g)
+
