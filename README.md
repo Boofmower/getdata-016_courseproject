@@ -21,6 +21,16 @@
 <li> <a href="https://github.com/Boofmower/getdata-016_courseproject/blob/master/run_analysis.R"> run_analysis.R </a> - the R code to run the analysis that fits the criteria outlined in the instructions above. This analysis assumes that the user has downloaded the dataset into its R working directory. </li>
 <li> avg.sub.tidy.txt - the output file from the analysis above. This is the tidy dataset created by first grouping by subjects, then by each of the six activities relevated to the data, and then by the mean of each of the parsed variables. </li>
 </ul>
+
+## Dependencies
+<p> Several packages must be installed in order to run the analysis. The following provides you with links to install them:</p>
+
+*<a href = "http://cran.r-project.org/web/packages/data.table/index.html"> data.table</a>: "Fast aggregation of large data (e.g. 100GB in RAM), fast ordered joins, fast add/modify/delete of columns by group using no copies at all, list columns and a fast file reader (fread). Offers a natural and flexible syntax, for faster development."
+*<a href = "http://cran.r-project.org/web/packages/dplyr/index.html">dplyr</a>: "A fast, consistent tool for working with data frame like objects, both in memory and out of memory."
+*<a href = "http://cran.r-project.org/web/packages/xlsx/index.html">xlsx</a>: "Provide R functions to read/write/format Excel 2007 and Excel 97/2000/XP/2003 file formats."
+*<a href = "http://cran.r-project.org/web/packages/tidyr/index.html">tidyr</a>:"An evolution of reshape2. It's designed specifically for data tidying (not general reshaping or aggregating) and works well with dplyr data pipelines."
+*<a href = "http://cran.r-project.org/web/packages/reshape/index.html">reshape</a>:"Reshape lets you flexibly restructure and aggregate data using just two functions: melt and cast."
+
 =========================
 <p><b>Author:</b> Brandon Chiazza</p>
 <p><b>Date Created:</b> December 8, 2014</p>
