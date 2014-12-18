@@ -7,9 +7,9 @@
 
 #    ***************Data was created from the following source:****************
 #               Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. 
-#		Reyes-Ortiz. Human Activity Recognition on #Smartphones using #a Multiclass 
-#		Hardware-Friendly Support Vector Machine. International Workshop of Ambient 	
-#		Assisted Living (IWAAL #2012). Vitoria-#Gasteiz, Spain. Dec 2012.
+#               Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass 
+#               Hardware-Friendly Support Vector Machine. International Workshop of Ambient 	
+#               Assisted Living (IWAAL 2012). Vitoria-#Gasteiz, Spain. Dec 2012.
 
 #==============================================END NOTE=================================================
 
@@ -212,9 +212,9 @@ names.2 <- gsub("fBody", "FreqBody", names.1) #changes fBody to FreqBody
 names.3 <- gsub("tGravity", "TimeGravity", names.2) #changes tGravity to TimeGravity
 names.4 <- gsub("fGravity", "FreqGravity", names.3) #changes fGravity to FreqGravity
 names.5 <- gsub("BodyBody", "Body", names.4) #changes double "Body" to only one Body
-names.6 <- gsub("\\.\\.\\.", "\\.", names.5)
-names.7 <- gsub("\\.\\.", "\\.", names.6)
-names.8 <- gsub("\\.$", "", names.7)
+names.6 <- gsub("\\.\\.\\.", "\\.", names.5) # removes elispses
+names.7 <- gsub("\\.\\.", "\\.", names.6) # removes elispses
+names.8 <- gsub("\\.$", "", names.7) # removes period at end of column name
 names(data1) <- names.8
 
 #=======================================================================================================
@@ -233,6 +233,22 @@ avg.sub <-summarise_each_(group_by(data1,subject,activity), funs(mean), names(da
 
 #output avg.sub
 print(avg.sub)
+
+#Source: local data frame [180 x 88]
+
+#   subject           activity TimeBodyAcc.mean.X TimeBodyAcc.mean.Y
+#       1             LAYING          0.2215982       -0.040513953
+#       1            SITTING          0.2612376       -0.001308288
+#       1           STANDING          0.2789176       -0.016137590
+#       1            WALKING          0.2773308       -0.017383819
+#       1 `WALKING_DOWNSTAIRS          0.2891883       -0.009918505
+#       1   WALKING_UPSTAIRS          0.2554617       -0.023953149
+#       2             LAYING          0.2813734       -0.018158740
+#       2            SITTING          0.2770874       -0.015687994
+#       2           STANDING          0.2779115       -0.018420827
+#       2            WALKING          0.2764266       -0.018594920
+#..     ...                ...                ...                ...
+#Variables not shown: TimeBodyAcc.mean.Z (dbl), TimeGravityAcc.mean.X
 
 #=======================================================================================================
 #-------------------------------------------END PART 5.-------------------------------------------------
