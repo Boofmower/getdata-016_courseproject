@@ -1,4 +1,3 @@
-
 #Author: Brandon Chiazza
 #Date: December 1, 2014
 #Getting and Cleaning Data: Course Project
@@ -6,7 +5,7 @@
 
 #==============================================NOTE=====================================================
 
-#  	***************Data was created from the following source:****************
+#    ***************Data was created from the following source:****************
 #               Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. 
 #		Reyes-Ortiz. Human Activity Recognition on #Smartphones using #a Multiclass 
 #		Hardware-Friendly Support Vector Machine. International Workshop of Ambient 	
@@ -213,9 +212,10 @@ names.2 <- gsub("fBody", "FreqBody", names.1) #changes fBody to FreqBody
 names.3 <- gsub("tGravity", "TimeGravity", names.2) #changes tGravity to TimeGravity
 names.4 <- gsub("fGravity", "FreqGravity", names.3) #changes fGravity to FreqGravity
 names.5 <- gsub("BodyBody", "Body", names.4) #changes double "Body" to only one Body
-names.6 <- gsub("-()", "", names.5) #removes extraneous "-()" from names
-
-names(data1) <- names.6
+names.6 <- gsub("\\.\\.\\.", "\\.", names.5)
+names.7 <- gsub("\\.\\.", "\\.", names.6)
+names.8 <- gsub("\\.$", "", names.7)
+names(data1) <- names.8
 
 #=======================================================================================================
 #-------------------------------------END PART 4.-------------------------------------------------------
@@ -239,7 +239,6 @@ print(avg.sub)
 #=======================================================================================================
 
 #****Use the following code to check the tidy data set in R******
-write.table(avg.sub, row.name=FALSE, ".\\avg.sub.tidy.txt")
+write.table(avg.sub, row.name=FALSE, "./avg.sub.tidy.txt")
 g <-read.table("./avg.sub.tidy.txt", header=TRUE)
 head(g)
-
