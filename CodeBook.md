@@ -17,22 +17,7 @@
 <p>The result is a 180 X 88 dataframe with each subject (1-30) identifiable and each activity type (e.g, "LAYING","WALKING", etc.) idenfied. The mean for the parsed columns is then applied in the grouping. </p>
 
 <h2>Table Descriptions</h2>
-<style type="text/css">
-	table.tableizer-table {
-	border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-} 
-.tableizer-table td {
-	padding: 4px;
-	margin: 3px;
-	border: 1px solid #ccc;
-}
-.tableizer-table th {
-	background-color: #104E8B; 
-	color: #FFF;
-	font-weight: bold;
-}
-</style><table class="tableizer-table">
+<table class="tableizer-table">
 <tr class="tableizer-firstrow"><th>Field</th><th>Original</th><th>Class</th><th>Description</th></tr>
  <tr><td>subject</td><td>Not Applicable</td><td>Numeric - primary key</td><td>Thirty subjects were used in the study. Valid values for this field are 1 to 30.</td></tr>
  <tr><td>activity</td><td>Not Applicable</td><td>Categorical</td><td>Six activities that describe each subject's type of movement: "LAYING," WALKING," "SITTING," "STANDING," "WALKING_UPSTAIRS," "WALKING_DOWNSTAIRS"</td></tr>
@@ -123,12 +108,6 @@
  <tr><td>FreqBodyGyroMag.std</td><td>fBodyBodyGyroMag-std()</td><td>Numeric</td><td>Mean of frequency body gyroscopic magnitude standard deviation</td></tr>
  <tr><td>FreqBodyGyroJerkMag.std</td><td>fBodyBodyGyroJerkMag-std()</td><td>Numeric</td><td>Mean of frequency body gyroscopic Jerk magnitude standard deviation</td></tr>
 </table>
-
-
-
-
-
-
 
 
 
