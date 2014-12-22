@@ -232,7 +232,7 @@ names(data1) <- names.8
 avg.sub <-summarise_each_(group_by(data1,subject,activity), funs(mean), names(data1[,3:ncol(data1)]))
 
 #output avg.sub
-print(avg.sub)
+#print(avg.sub) #***REMOVE THE NOTE COMMENT TO SEE OUTPUT OR VIEW BELOW****
 
 #Source: local data frame [180 x 88]
 
